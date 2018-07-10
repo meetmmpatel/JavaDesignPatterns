@@ -5,42 +5,42 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Order {
-	 private String id;
+	private String id;
 
-	    private LocalDate date;
+	private LocalDate date;
 
-	    private Map<String, Double> items = new HashMap<>();
+	private Map<String, Double> items = new HashMap<>();
 
-	    private double total;
+	private double total;
 
-	    public Order(String id) {
-	        this.id = id;
-	        date = LocalDate.now();
-	    }
+	public Order(String id) {
+		this.id = id;
+		date = LocalDate.now();
+	}
 
-	    public String getId() {
-	        return id;
-	    }
+	public void addItem(String name, double price) {
+		items.put(name, price);
+		total += price;
+	}
 
-	    public LocalDate getDate() {
-	        return date;
-	    }
+	public String getId() {
+		return id;
+	}
 
-	    public Map<String, Double> getItems() {
-	        return items;
-	    }
+	public LocalDate getDate() {
+		return date;
+	}
 
-	    public void addItem(String name, double price) {
-	        items.put(name, price);
-	        total+= price;
-	    }
+	public Map<String, Double> getItems() {
+		return items;
+	}
 
-	    public double getTotal() {
-	        return total;
-	    }
+	public double getTotal() {
+		return total;
+	}
 
-	    public void setTotal(double total) {
-	        this.total = total;
-	    }
+	public void setTotal(double total) {
+		this.total = total;
+	}
 
 }
